@@ -1,5 +1,6 @@
 :root {
-    font-size: 62.5%;
+    font-family: "Open Sans", Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 58%;
     --main-color: #EAEAEA;
     --secondary-color: #B9C1DF;
     --accent-color: #2B303A;
@@ -16,6 +17,7 @@ a {
 }
 
 button {
+    font-family: "Open Sans", Verdana, Geneva, Tahoma, sans-serif;
     cursor: pointer;
 }
 

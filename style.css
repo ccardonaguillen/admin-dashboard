@@ -37,13 +37,14 @@ nav {
     font-weight: bold;
 }
 
-.logo-container {
+.logo-container a {
     display: grid;
     grid-template-columns: 3rem 1fr;
     gap: 15px;
     align-items: center;
     margin-left: -0.75rem;
 }
+
 .logo {
     height: 3.5rem;
 }
@@ -60,6 +61,11 @@ nav > .nav-container {
 }
 
 nav a {
+    color: var(--accent-text);
+    font-size: 1.8rem;
+}
+
+.nav-container a {
     display: grid;
     grid-auto-flow: column;
     grid-auto-columns: 2.2rem 1fr;
@@ -71,7 +77,7 @@ nav a {
     transition: 0.15s;
 }
 
-nav a:hover {
+.nav-container a:hover {
     transform: scale(1.1);
 }
 
@@ -292,7 +298,13 @@ content h3 {
 }
 
 .project-icon {
-    width: 1.8rem;
+    align-self: center;
+    width: 2.2rem;
+}
+
+#github-icon {
+    justify-self: end;
+    width: 2.5rem;
 }
 
 .preview {
@@ -305,7 +317,7 @@ content h3 {
 
 .project-description {
     margin: 0 5px;
-    font-size: 1.4rem;
+    font-size: 1.5rem;
     text-align: justify;
     color: var(--secondary-text)
 }
@@ -328,11 +340,6 @@ content h3 {
 
 .img-button.share{
     background-image: url(./images/icons/share.svg);
-}
-
-.img-button.github{
-    justify-self: end;
-    background-image: url(./images/icons/github.svg);
 }
 
 .card.announcements {

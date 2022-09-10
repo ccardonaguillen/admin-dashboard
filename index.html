@@ -12,8 +12,10 @@
 <body>
     <nav>
         <div class="logo-container">
-            <img src="./images/icons/dashboard.svg" alt="Logo" class="logo" />
-            <h2 class="logo-title">Dashboard</h2>
+            <a href="./index.html">
+                <img src="./images/icons/dashboard.svg" alt="Logo" class="logo" />
+                <h2 class="logo-title">Dashboard</h2>
+            </a>
         </div>
         <div class="nav-container">
             <a href="#" title="Home">
@@ -59,12 +61,12 @@
     <main>
         <header>
             <form action="#" method="post" id="search-form">
-                <input type="image" id="search-query" src="./images/icons/magnify.svg" alt="Search"
+                <input type="image" title="Search" id="search-query" src="./images/icons/magnify.svg" alt="Search"
                     class="search-icon" />
                 <input type="text" name="search" id="search-bar" />
             </form>
             <div class="user-info">
-                <button id="notification-bell" class="img-button bell"></button>
+                <button id="notification-bell" title="Enable Notifications" class="img-button bell"></button>
                 <img src="./images/avatars/coffee&tv.png" alt="User avatar" class="avatar mini" />
                 <p class="username">Carlos Cardona</p>
             </div>
@@ -90,21 +92,24 @@
                     <div class="card project">
                         <div class="card-header">
                             <a href="#" class="project-link">
-                                <img src="./images/icons/blank-circle.svg" alt="#" class="project-icon" />
+                                <img src="./images/projects/calculator-icon.svg" alt="#" class="project-icon" />
                                 <h4 class="project-title">
-                                    Lorem Ipsum Dolor
+                                    Web-based Calculator
                                 </h4>
                             </a>
-                            <button class="img-button github"></button>
+                            <a href="https://github.com/ccardonaguillen/calculator-webpage" target="_blank" live-version" id="github-icon" title="Github Code">
+                                <img src="./images/icons/github.svg" alt="" class="preview" />
+                            </a>
                         </div>
-                        <a href="#" class="live-version" title="Live Version">
-                            <img src="./images/projects/turquoise_coast.jpg" alt="" class="preview" />
+                        <a href="https://ccardonaguillen.github.io/calculator-webpage/" target="_blank" live-version" title="Live Version">
+                            <img src="./images/projects/calculator-project.png" alt="" class="preview" />
                         </a>
                         <p class="project-description">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                            labore et dolore magna aliqua. Tincidunt nunc pulvinar sapien et. Facilisis gravida neque
-                            convallis a cras semper auctor neque. Quam pellentesque nec nam aliquam sem et tortor
-                            consequat id. Ut sem viverra aliquet eget sit.
+                            Fully working calculator able to <strong>sum, subtract, multiply and divide</strong> any two decimal numbers.
+                            The user is also able to carry the result of an operation onto the next.
+                            It includes a function to correct the input at any point by deleting characters.
+                            Additionally it includes <strong>full keyboard support</strong>.
+                            A filesafe is also in place when attempting to divide by zero.
                         </p>
                         <div class="options-container">
                             <button class="img-button favourite"></button>
@@ -112,8 +117,35 @@
                             <button class="img-button share"></button>
                         </div>
                     </div>
-                    <div class="card"></div>
+                    <div class="card project">
+                        <div class="card-header">
+                            <a href="#" class="project-link">
+                                <img src="./images/projects/palette-icon.svg" alt="#" class="project-icon" />
+                                <h4 class="project-title">
+                                    Improved Etch-A-Sketch
+                                </h4>
+                            </a>
+                            <a href="https://github.com/ccardonaguillen/etch-a-sketch" target="_blank" live-version" id="github-icon" title="Github Code">
+                                <img src="./images/icons/github.svg" alt="" class="preview" />
+                            </a>
+                        </div>
+                        <a href="https://ccardonaguillen.github.io/etch-a-sketch/" target="_blank" live-version" title="Live Version">
+                            <img src="./images/projects/etch-a-sketch-project.png" alt="" class="preview" />
+                        </a>
+                        <p class="project-description">
+                            Interactive web-based Etch-A-Sketch where you can <strong>draw while holding</strong> any mouse button.
+                            It includes the possibility to modify the density of the grid, i.e. the number of drawing squares (1&ndash;100).
+                            Additionaly it includes <strong>three different paint modes</strong>. 
+                        </p>
+                        <div class="options-container">
+                            <button class="img-button favourite"></button>
+                            <button class="img-button like"></button>
+                            <button class="img-button share"></button>
+                        </div>
+                    </div>
+                    
                 </div>
+                
             </div>
             <div>
                 <h3 class="title">Announcements</h3>

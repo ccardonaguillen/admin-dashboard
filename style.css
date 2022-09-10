@@ -1,29 +1,39 @@
 :root {
     font-size: 62.5%;
-    --accent-color: rgb(59, 135, 229);
-    --alt-accent-color: rgb(221, 136, 25);
-    --bkg-grey: rgb(210, 210, 210);
+    --main-color: #EAEAEA;
+    --secondary-color: #B9C1DF;
+    --accent-color: #2B303A;
+    --secondary-accent-color: #75061F;
+    --main-text: rgb(0, 0, 0);
+    --secondary-text: rgb(65, 65, 65);
+    --accent-text: #FFFFFF;
+    --shadow-grey: rgba(120, 120, 120, 0.8);
+    --shadow-black: rgba(0, 0, 0, 0.8)
+}
+
+a {
+    text-decoration: none;
+}
+
+button {
+    cursor: pointer;
 }
 
 body {
     display: grid;
-    grid-template: min-content 1fr / 240px 1fr;
-    grid-template-areas: 
-        "nav header"
-        "nav main";
+    grid-template-columns: 240px 1fr;
     padding: 0;
     margin: 0;
     height: 100vh;
 }
 
 nav {
-    grid-area: nav;
     display: grid;
     align-content: start;
     gap: 40px;
     padding: 15px 25px;
     background-color: var(--accent-color);
-    color: white;
+    color: var(--accent-text);
     font-weight: bold;
 }
 
@@ -50,22 +60,22 @@ nav > .nav-container {
 }
 
 nav a {
-    text-decoration: none;
     display: grid;
     grid-auto-flow: column;
     grid-auto-columns: 2.2rem 1fr;
     align-items: center;
     gap: 14px;
-    color: white;
+    color: var(--accent-text);
     margin: 0.5rem 0;
+    font-size: 1.8rem;
+    transition: 0.15s;
 }
 
 nav a:hover {
-    color: red;
+    transform: scale(1.1);
 }
 
 nav p {
-    font-size: 1.8rem;
     margin: 0;
 }
 
@@ -73,12 +83,22 @@ nav p {
     height: 2.2rem;
 }
 
+main {
+    display: grid;
+    grid-template-rows: min-content 1fr;
+    overflow-y: auto;
+}
+
 header {
-    background-color: var(--alt-accent-color);
+    background-color: var(--main-color);
     display: grid;
     row-gap: 15px;
     grid-template: min-content min-content / 2fr 1fr;
     padding: 10px 35px 20px;
+    box-shadow: 0px 5px 5px var(--shadow-grey);
+    position: sticky;
+    top: -4.3rem;
+    color: var(--main-text)
 }
 
 header > div {
@@ -101,12 +121,12 @@ header > div {
 #search-bar {
     -webkit-appearance: none;
     appearance: none;
-    width: 100%;
     border: none;
     border-radius: 15px;
-    background-color: var(--bkg-grey);
+    background-color: var(--secondary-color);
     font-size: 1.4rem;
     padding: 0.4rem 1.4rem;
+    box-shadow: 1px 1px 2px var(--shadow-black) inset;
 }
 
 .user-info {
@@ -114,18 +134,21 @@ header > div {
     grid-auto-flow: column;
     justify-content: end;
     align-items: center;
-    gap: 5px
+    gap: 8px
 }
 
 
-#notification-bell{
+.img-button{
     appearance: none;
-    background-image: url(./images/bell.svg);
     background-color: #00000000;
     background-repeat: no-repeat;
     border: none;
     height: 2.2rem;
     width: 2.2rem;
+}
+
+.img-button.bell{
+    background-image: url(./images/icons/bell.svg);
     margin-right: 20px;
 }
 
@@ -134,16 +157,18 @@ header > div {
 }
 
 .user-info > p {
+    align-self: end;
     font-size: 1.5rem;
     font-weight: bold;
 }
 
 .welcome {
-    grid-template: 1fr / 6rem 1fr;
+    display: grid;
+    grid-auto-flow: column;
+    grid-template: 1fr min-content / 6rem 1fr;
     column-gap: 10px;
     justify-content: start;
     align-items: end;
-    align-content: center;
 }
 
 
@@ -153,7 +178,9 @@ header > div {
 
 .avatar {
     height: 5.5rem;
+    outline: black 1px solid;
     border-radius: 50%;
+    margin-bottom: -0.5rem;
 }
 
 .welcome > p {
@@ -170,46 +197,201 @@ header > div {
 }
 
 .controls {
-    justify-content: space-between;
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: end;
+    column-gap: 10px;
     align-items: end;
 }
+
 .controls > button {
     appearance: none;
     border: none;
     background-color: var(--accent-color);
-    color: white;
+    color: var(--accent-text);
     font-weight: bold;
     font-size: 1.2rem;
     padding: 0.7rem 2rem;
     border-radius: 20px;
 }
 
-main {
-    background-color: var(--bkg-grey);
-    display: grid;
-    grid-template: 1fr 1fr / 3fr 1fr;
+.controls > button:hover {
+    background-color: var(--secondary-accent-color);
 }
 
-.projects {
+.controls > button:active {
+    background-color: var(--secondary-accent-color);
+    box-shadow: 1px 1px 2px black inset;
+    padding: 0.8rem 1.95rem 0.6rem 2.05rem;
+}
+
+content {
+    background-color: var(--secondary-color);
+    display: grid;
+    grid-template: min-content min-content / 1fr 200px;
+    gap: 35px 15px;
+    padding: 20px 15px;
+    color: var(--main-text)
+}
+
+content h3, h4, p {
+    margin: 0;
+}
+
+content h3 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.container {
     grid-row: 1 / 3;
 }
 
-.card-container {
+.cards-container {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 15px;
 }
 
 .card {
-    height: 25s0px;
-    border: red solid 2px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    padding: 25px 25px;
+    background-color: var(--main-color);
+    box-shadow: 2px 2px 4px var(--shadow-grey);
+}
+
+.card.project {
+    box-sizing: border-box;
+    display: grid;
+    grid-template-rows: min-content 1fr min-content min-content;
+    gap: 8px;
+}
+
+.card.project:hover {
+    padding-left: 15px;
+    border-left: var(--accent-color) 10px solid;
+}
+
+.card-header {
+    display: grid;
+    grid-auto-flow: column;
+    align-items: center;
+    margin: 0 5px;
+}
+
+
+.project-link {
+    display: grid;
+    grid-auto-flow: column;
+    gap: 0.5rem;
+    justify-content: start;
+    align-items: center;
+    font-size: 1.8rem;
+    color: black;
+}
+
+.project-icon {
+    width: 1.8rem;
+}
+
+.preview {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-postion: center;
+    margin: 0;
+}
+
+.project-description {
+    margin: 0 5px;
+    font-size: 1.4rem;
+    text-align: justify;
+    color: var(--secondary-text)
+}
+
+.options-container {
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: end;
+    gap: 10px;
+    margin: 0 5px;
+}
+
+.img-button.favourite{
+    background-image: url(./images/icons/star.svg);
+}
+
+.img-button.like{
+    background-image: url(./images/icons/thumb-up.svg);
+}
+
+.img-button.share{
+    background-image: url(./images/icons/share.svg);
+}
+
+.img-button.github{
+    justify-self: end;
+    background-image: url(./images/icons/github.svg);
+}
+
+.card.announcements {
+    display: grid;
+    grid-template-rows: repeat(auto-fit, min-content);
 }
 
 .announcement {
-    height: 60px;
-    border: red solid 2px;
+    margin: 0;
+    padding-bottom: 15px;
+    overflow: hidden;
 }
 
-.user-card {
-    height: 40px;
-    border: red solid 2px;
+.announcement:not(:last-child){
+    border-bottom: var(--secondary-color) 1px solid;
+}
+
+.announcement:not(:first-child) {
+    padding-top: 15px;
+}
+
+.announcement-title {
+    display: block;
+    margin: 0;
+    margin-bottom: 0.2rem;
+    font-size: 1.2rem;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.announcement-description {
+    font-size: 1.1rem;
+    color: var(--secondary-text);
+}
+
+.card.trending {
+    display: grid;
+    grid-template-rows: repeat(4, 50px);
+    padding: 10px 20px;
+}
+
+.trending > div {
+    display: grid;
+    grid-template: 1fr 1fr / 3.5rem 1fr;
+    column-gap: 8px;
+    font-size: 1.1rem;
+    align-content: center;
+}
+
+.trending img  {
+    grid-row: 1 / 3;
+    align-self: center;
+}
+
+.trend-description {
+    color: var(--secondary-text)
+}
+
+
+.user-tag {
+    align-self: end;
 }

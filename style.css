@@ -57,7 +57,7 @@ nav {
     font-size: 2.5rem;
 }
 
-nav > .nav-container {
+nav>.nav-container {
     display: grid;
     gap: 0.5rem;
 }
@@ -109,7 +109,7 @@ header {
     color: var(--main-text)
 }
 
-header > div {
+header>div {
     display: grid;
     grid-auto-flow: column;
     justify-items: space-between;
@@ -146,7 +146,7 @@ header > div {
 }
 
 
-.img-button{
+.img-button {
     appearance: none;
     background-color: #00000000;
     background-repeat: no-repeat;
@@ -155,7 +155,7 @@ header > div {
     width: 2.2rem;
 }
 
-.img-button.bell{
+.img-button.bell {
     background-image: url(./images/icons/bell.svg);
     margin-right: 20px;
 }
@@ -164,7 +164,7 @@ header > div {
     height: 3.2rem;
 }
 
-.user-info > p {
+.user-info>p {
     align-self: end;
     font-size: 1.5rem;
     font-weight: bold;
@@ -180,7 +180,7 @@ header > div {
 }
 
 
-.welcome > .avatar {
+.welcome>.avatar {
     grid-row: 1 / 3
 }
 
@@ -191,7 +191,7 @@ header > div {
     margin-bottom: -0.5rem;
 }
 
-.welcome > p {
+.welcome>p {
     font-weight: bold;
     margin: 0;
 }
@@ -212,7 +212,7 @@ header > div {
     align-items: end;
 }
 
-.controls > button {
+.controls>button {
     appearance: none;
     border: none;
     background-color: var(--accent-color);
@@ -223,11 +223,11 @@ header > div {
     border-radius: 20px;
 }
 
-.controls > button:hover {
+.controls>button:hover {
     background-color: var(--secondary-accent-color);
 }
 
-.controls > button:active {
+.controls>button:active {
     background-color: var(--secondary-accent-color);
     box-shadow: 1px 1px 2px black inset;
     padding: 0.8rem 1.95rem 0.6rem 2.05rem;
@@ -242,7 +242,9 @@ content {
     color: var(--main-text)
 }
 
-content h3, h4, p {
+content h3,
+h4,
+p {
     margin: 0;
 }
 
@@ -332,15 +334,15 @@ content h3 {
     margin: 0 5px;
 }
 
-.img-button.favourite{
+.img-button.favourite {
     background-image: url(./images/icons/star.svg);
 }
 
-.img-button.like{
+.img-button.like {
     background-image: url(./images/icons/thumb-up.svg);
 }
 
-.img-button.share{
+.img-button.share {
     background-image: url(./images/icons/share.svg);
 }
 
@@ -355,7 +357,7 @@ content h3 {
     overflow: hidden;
 }
 
-.announcement:not(:last-child){
+.announcement:not(:last-child) {
     border-bottom: var(--secondary-color) 1px solid;
 }
 
@@ -383,7 +385,7 @@ content h3 {
     padding: 10px 20px;
 }
 
-.trending > div {
+.trending>div {
     display: grid;
     grid-template: 1fr 1fr / 3.5rem 1fr;
     column-gap: 8px;
@@ -391,7 +393,7 @@ content h3 {
     align-content: center;
 }
 
-.trending img  {
+.trending img {
     grid-row: 1 / 3;
     align-self: center;
 }
